@@ -1,5 +1,6 @@
 import { Search } from "lucide-react";
 import ProductsSection from "./components/sections/product/ProductsSection";
+import Header from "./components/Partials/Header";
 // import { api } from './services/api';
 // Use this to fetch data: api.fetchProducts(...)
 
@@ -7,20 +8,7 @@ function App() {
   return (
     <div style={{ minHeight: "100vh", padding: "2rem" }}>
       {/* Header Section */}
-      <header
-        className="glass-panel"
-        style={{ padding: "2rem", marginBottom: "2rem" }}
-      >
-        <h1
-          style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.5rem" }}
-        >
-          Premium Products
-        </h1>
-        <p style={{ color: "var(--text-muted)" }}>
-          Browse our collection. Handling the flaky API gracefully is part of
-          the challenge.
-        </p>
-      </header>
+      <Header />
 
       {/* Controls Section */}
       <section style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>

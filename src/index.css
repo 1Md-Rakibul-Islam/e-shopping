@@ -8,12 +8,14 @@
   --background: #f8fafc;
   --surface: #ffffff;
   --surface-hover: #f1f5f9;
-  --primary: #2563eb;
+  --primary: #1882FF;
   --primary-hover: #1d4ed8;
   --text-main: #0f172a;
   --text-muted: #64748b;
   --border: rgba(0, 0, 0, 0.1);
   --error: #ef4444;
+  --neutral-700: #5A6573;
+  --neutral-900: #1A2B3D;
 }
 
 * {
