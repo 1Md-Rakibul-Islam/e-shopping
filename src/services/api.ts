@@ -1,4 +1,5 @@
-import type { Product, PaginatedResponse, FetchProductsParams } from '../types/product';
+import type { Product } from '../types/product.interface';
+import type { FetchProductsParams, PaginatedResponse } from '../types/response.interface';
 
 // Static mock data
 const mockProducts: Product[] = Array.from({ length: 154 }, (_, i) => ({
@@ -44,7 +45,7 @@ export const api = {
 
     const total = filteredData.length;
     const totalPages = Math.ceil(total / limit);
-    
+
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
     const paginatedData = filteredData.slice(startIndex, endIndex);
