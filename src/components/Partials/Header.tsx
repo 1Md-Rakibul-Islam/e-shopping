@@ -4,10 +4,8 @@ const Header = () => {
       className="glass-panel"
       style={{ padding: "2rem", marginBottom: "2rem" }}
     >
-      <h1 style={{ fontSize: "2rem", fontWeight: 600, marginBottom: "0.5rem" }}>
-        Premium Products
-      </h1>
-      <p style={{ color: "var(--text-muted)" }}>
+      <h1 className="font-semibold mb-2">Premium Products</h1>
+      <p className="text-[var(--text-muted)]">
         Browse our collection. Handling the flaky API gracefully is part of the
         challenge.
       </p>
