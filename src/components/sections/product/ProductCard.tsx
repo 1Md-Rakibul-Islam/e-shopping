@@ -1,4 +1,4 @@
-import type { Product } from "../../../types/product.interface";
+import type { Product } from "@/types/product.interface";
 
 const ProductCard = ({ product }: { product: Product }) => {
   const { category, imageUrl, name, price } = product;
@@ -22,7 +22,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         >
           {product?.name || ""}
         </a>
-        <p className="font-medium sm:text-xl text-lg leading-8">
+        <p className="font-medium text-[var(--primary)] sm:text-xl text-lg leading-8">
           ${price?.toFixed(2) || "0.00"}
         </p>
       </div>

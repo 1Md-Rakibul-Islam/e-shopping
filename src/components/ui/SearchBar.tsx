@@ -1,6 +1,15 @@
 import { Search } from "lucide-react";
+interface SearchBarProps {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+}
 
-const SearchBar = () => {
+const SearchBar = ({
+  value,
+  onChange,
+  placeholder = "Search...",
+}: SearchBarProps) => {
   return (
     <div
       className="glass-panel"
@@ -19,7 +28,9 @@ const SearchBar = () => {
       />
       <input
         type="text"
-        placeholder="Search products..."
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
         style={{
           background: "transparent",
           border: "none",
