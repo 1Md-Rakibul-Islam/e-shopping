@@ -5,7 +5,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
   return (
     <div className="bg-white">
-      <div className="md:rounded-lg sm:rounded-md rounded-[0.25rem] overflow-hidden">
+      <div className="w-full h-[210px] md:rounded-lg sm:rounded-md rounded-[0.25rem] overflow-hidden">
         <img
           className="w-full h-[210px] hover:scale-110 transition-all mb-0.5 object-cover"
           src={imageUrl || "https://placehold.co/600x400"}
