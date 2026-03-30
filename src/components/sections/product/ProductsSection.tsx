@@ -66,31 +66,27 @@ const HomePage = () => {
         setCategory={handleCategoryChange}
       />
       <div className="mx-auto">
-        {/* Loading */}
-        {/* {isLoading && (
-          // || isFetching && !isLoading
-
-          <p className="text-center text-primary">Loading products...</p>
-        )} */}
-
         {/* Error */}
+
         {isError && (
-          <div className="text-center text-red-500">
-            {(error as Error).message}
+          <div className="text-lg sm:text-xl md:text-2xl text-center text-red-500 mb-5">
+            {(error as Error)?.message}
           </div>
         )}
 
         {/* Empty */}
         {!isLoading && data?.data.length === 0 && (
-          <p className="text-center text-gray-400">No products found</p>
+          <p className="text-lg sm:text-xl md:text-2xl text-center text-gray-400 mb-5">
+            No products found
+          </p>
         )}
 
         <div className="border border-dashed rounded-2xl min-h-[80%]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-5">
             {
               // Skeleton
               isLoading &&
-                Array.from({ length: 15 }, (_, i) => <CardSkeleton key={i} />)
+                Array.from({ length: 12 }, (_, i) => <CardSkeleton key={i} />)
             }
             {data?.data?.map((product) => (
               <ProductCard key={product.id} product={product} />
