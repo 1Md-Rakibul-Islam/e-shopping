@@ -1,5 +1,5 @@
-import SearchBar from "../../ui/SearchBar";
-import Select from "../../ui/Select";
+import SearchBar from "@/components/ui/SearchBar";
+import Select from "@/components/ui/Select";
 import { categories } from "./product.constant";
 
 interface ProductHeaderProps {

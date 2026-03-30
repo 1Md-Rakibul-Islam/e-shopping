@@ -16,9 +16,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    "baseUrl": ".",
+    "baseUrl": "./",
+    // Paths
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@public/*": ["./public/*"]
     },
 
     /* Linting */
@@ -29,5 +32,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "src/.d.ts"]
 }

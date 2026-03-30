@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useDebounce } from "../../../hooks/useDebounce";
-import { useProducts } from "../../../hooks/service/useProducts";
-import { Pagination } from "../../ui/Pagination";
-import ProductCard from "./ProductCard";
-import { api } from "../../../services/api";
+import CardSkeleton from "@/components/shared/CardSkeleton";
 import ProductHeader from "./ProductHeader";
-import CardSkeleton from "../../shared/CardSkeleton";
+import ProductCard from "./ProductCard";
+import { Pagination } from "@/components/ui/Pagination";
+import { useDebounce } from "@/hooks/useDebounce";
+import { useProducts } from "@/hooks/service/useProducts";
+import { api } from "@/services/api";
 
-const HomePage = () => {
+const ProductsSection = () => {
   const queryClient = useQueryClient();
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
@@ -26,7 +26,7 @@ const HomePage = () => {
     if (!data) return;
 
     // Prefetch next page
-    if (data.page < data.totalPages) {
+    if (data?.page < data?.totalPages) {
       queryClient.prefetchQuery({
         queryKey: [
           "products",
@@ -37,7 +37,7 @@ const HomePage = () => {
           },
         ],
         queryFn: () =>
-          api.fetchProducts({
+          api?.fetchProducts({
             page: page + 1,
             search: debouncedSearch,
             category,
@@ -75,7 +75,7 @@ const HomePage = () => {
         )}
 
         {/* Empty */}
-        {!isLoading && data?.data.length === 0 && (
+        {!isLoading && data?.data?.length === 0 && (
           <p className="text-lg sm:text-xl md:text-2xl text-center text-gray-400 mb-5">
             No products found
           </p>
@@ -89,7 +89,7 @@ const HomePage = () => {
                 Array.from({ length: 12 }, (_, i) => <CardSkeleton key={i} />)
             }
             {data?.data?.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product?.id} product={product} />
             ))}
           </div>
         </div>
@@ -97,8 +97,8 @@ const HomePage = () => {
         {data && (
           <div className="mt-8 flex justify-center">
             <Pagination
-              currentPage={data.page}
-              totalPages={data.totalPages}
+              currentPage={data?.page}
+              totalPages={data?.totalPages}
               onPageChange={(newPage) => {
                 if (newPage !== page) setPage(newPage);
               }}
@@ -111,4 +111,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default ProductsSection;

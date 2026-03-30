@@ -1,5 +1,5 @@
-import type { Product } from '../types/product.interface';
-import type { FetchProductsParams, PaginatedResponse } from '../types/response.interface';
+import type { Product } from '@/types/product.interface';
+import type { FetchProductsParams, PaginatedResponse } from '@/types/response.interface';
 
 // Static mock data
 const mockProducts: Product[] = Array.from({ length: 154 }, (_, i) => ({
